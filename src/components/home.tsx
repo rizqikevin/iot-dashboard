@@ -3,8 +3,6 @@ import Header from "./dashboard/Header";
 import SensorStatusPanel from "./dashboard/SensorStatusPanel";
 import VisualizationPanel from "./dashboard/VisualizationPanel";
 import ControlPanel from "./dashboard/ControlPanel";
-import InfoSidebar from "./dashboard/InfoSidebar";
-import AlertSystem from "./dashboard/AlertSystem";
 import { useToast } from "../components/ui/use-toast";
 
 const Home = () => {
@@ -146,24 +144,9 @@ const Home = () => {
 
           {/* Visualization Panel */}
           <VisualizationPanel sensors={sensors} timeRange={timeRange} />
-
-          {/* Alert System */}
-          <div className="mt-4">
-            <AlertSystem
-              alerts={alerts}
-              onDismissAlert={handleDismissAlert}
-              onReadAlert={handleReadAlert}
-              onClearAllAlerts={handleClearAllAlerts}
-              onToggleAlerts={handleToggleAlerts}
-            />
-          </div>
         </div>
 
         {/* Info Sidebar */}
-        <InfoSidebar
-          isCollapsed={sidebarCollapsed}
-          onToggleCollapse={handleSidebarToggle}
-        />
       </div>
     </div>
   );
